@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/cart/cart_bloc.dart';
 import '../const.dart';
 import '../generated/l10n.dart';
-import '../model/cart.dart';
+import '../model/cart_item.dart';
 
 //ProductCard (title, description, price, discountPercentage, rating, stock, thumbnail)
 
@@ -132,20 +132,21 @@ class ProductCard extends StatelessWidget {
               BlocBuilder<CartBloc, CartState>(
                 builder: (context, state) {
                   final cartBloc = BlocProvider.of<CartBloc>(context);
-                  // final Map<String, dynamic> item = {
-                  //   "title": title,
-                  // };
-                  final item = Cart(
+
+                  final cartItem = CartItem(
                     title: title,
                     description: description,
+                    price: price,
                   );
-
-                  final List newCart = [];
-                  newCart.add(item);
 
                   return ElevatedButton(
                     onPressed: () {
-                      cartBloc.add(AddToCartEvent());
+                      cartBloc.add(AddToCartEvent(cartItem));
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          behavior: SnackBarBehavior.floating,
+                          content:
+                              Text('$title ${S.of(context).added_to_cart}')));
+                      //print(state.cart.last.title);
                     },
                     style: ElevatedButton.styleFrom(
                       shape: const StadiumBorder(),

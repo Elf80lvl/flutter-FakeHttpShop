@@ -89,6 +89,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Cart is empty`
+  String get cart_is_empty {
+    return Intl.message(
+      'Cart is empty',
+      name: 'cart_is_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total`
+  String get total {
+    return Intl.message(
+      'Total',
+      name: 'total',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check Out`
+  String get checkout {
+    return Intl.message(
+      'Check Out',
+      name: 'checkout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Done! Thank you for using our fake shop`
+  String get done {
+    return Intl.message(
+      'Done! Thank you for using our fake shop',
+      name: 'done',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `added to cart`
+  String get added_to_cart {
+    return Intl.message(
+      'added to cart',
+      name: 'added_to_cart',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -17,3 +17,8 @@ const kScaffoldDarkColor = Color.fromARGB(255, 25, 25, 25);
 //*NavigationBar color
 const kNavLightColor = kScaffoldLightColor;
 const kNavDarkColor = kScaffoldDarkColor;
+
+const kTotalInCartTextStyle = TextStyle(
+  fontSize: 18,
+  fontWeight: FontWeight.bold,
+);

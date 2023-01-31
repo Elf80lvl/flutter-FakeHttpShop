@@ -2,5 +2,10 @@
     "addToCart": "Add to cart",
     "home": "Home",
     "cart": "Cart",
-    "profile": "Profile"
+    "profile": "Profile",
+    "cart_is_empty": "Cart is empty",
+    "total": "Total",
+    "checkout": "Check Out",
+    "done": "Done! Thank you for using our fake shop",
+    "added_to_cart": "added to cart"
 }

@@ -4,6 +4,7 @@ import 'package:flutter_bloc8_http_products/pages/main_page.dart';
 import 'package:flutter_bloc8_http_products/themes.dart';
 import 'bloc/cart/cart_bloc.dart';
 import 'bloc/navigation/navigation_bloc.dart';
+import 'bloc/themes/theme_bloc.dart';
 import 'generated/l10n.dart';
 import 'repositories/products_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,31 +27,38 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => CartBloc([]),
         ),
+        BlocProvider(
+          create: (context) => ThemeBloc(),
+        ),
       ],
       child: RepositoryProvider(
         create: (context) => ProductsPepository(),
-        child: MaterialApp(
-          localizationsDelegates: [
-            S.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: S.delegate.supportedLocales,
-          title: 'Flutter Demo',
-          debugShowCheckedModeBanner: false,
-          theme: kLightTheme,
-          darkTheme: kDarkTheme,
-          themeMode: ThemeMode.system,
-          home: const MainPage(),
+        child: BlocBuilder<ThemeBloc, ThemeState>(
+          builder: (context, state) {
+            final theme;
+            state.theme == 'dark' ? theme = kDarkTheme : theme = kLightTheme;
+            return MaterialApp(
+              localizationsDelegates: [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: S.delegate.supportedLocales,
+              title: 'Flutter Demo',
+              debugShowCheckedModeBanner: false,
+              theme: theme,
+              darkTheme: kDarkTheme,
+              themeMode: ThemeMode.system,
+              home: const MainPage(),
+            );
+          },
         ),
       ),
     );
   }
 }
 
-//TODO cart page
-//TODO add to cart button --------------------------
 //TODO change language with bloc
 //TODO change theme with bloc
 //TODO desktop layout
