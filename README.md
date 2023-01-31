@@ -1,16 +1,11 @@
 # flutter_bloc8_http_products
 
-A new Flutter project.
+## app features:
+* uses bloc 8
+* rest api
+* desktop and mobile layouts
+* localization (eng, ru)
+* dark and light themes
+* null-safety
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Frame 1](https://user-images.githubusercontent.com/49438937/215787913-b1556d91-8b4c-4708-8460-926d461d7f65.png)
