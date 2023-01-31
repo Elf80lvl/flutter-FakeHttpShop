@@ -1,4 +1,4 @@
-# flutter_bloc8_http_products
+# Flutter Fake HTTP Internet Shop
 
 ## app features:
 * uses bloc 8
