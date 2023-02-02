@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "done": MessageLookupByLibrary.simpleMessage(
             "Готово! Спасибо что воспользовались приложением"),
         "home": MessageLookupByLibrary.simpleMessage("Каталог"),
+        "language": MessageLookupByLibrary.simpleMessage("Язык"),
         "profile": MessageLookupByLibrary.simpleMessage("Профиль"),
         "total": MessageLookupByLibrary.simpleMessage("Всего")
       };

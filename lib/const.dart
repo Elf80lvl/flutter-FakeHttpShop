@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const kMobileBreakpoint = 900;
+
 //*border radius
 const kProductCardBorderRadius = 12.0;
 const kAddToCartButtonRadius = 12.0;

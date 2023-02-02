@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc8_http_products/pages/home_page.dart';
+import 'package:flutter_bloc8_http_products/pages/home_page/home_page.dart';
 import 'package:flutter_bloc8_http_products/pages/main_page.dart';
 import 'package:flutter_bloc8_http_products/themes.dart';
 import 'bloc/cart/cart_bloc.dart';
+import 'bloc/locale/locale_bloc.dart';
 import 'bloc/navigation/navigation_bloc.dart';
 import 'bloc/themes/theme_bloc.dart';
 import 'generated/l10n.dart';
@@ -30,27 +31,35 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => ThemeBloc(),
         ),
+        BlocProvider(
+          create: (context) => LocaleBloc(),
+        ),
       ],
       child: RepositoryProvider(
         create: (context) => ProductsPepository(),
         child: BlocBuilder<ThemeBloc, ThemeState>(
           builder: (context, state) {
-            final theme;
+            final ThemeData theme;
             state.theme == 'dark' ? theme = kDarkTheme : theme = kLightTheme;
-            return MaterialApp(
-              localizationsDelegates: [
-                S.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-              ],
-              supportedLocales: S.delegate.supportedLocales,
-              title: 'Flutter Demo',
-              debugShowCheckedModeBanner: false,
-              theme: theme,
-              darkTheme: kDarkTheme,
-              themeMode: ThemeMode.system,
-              home: const MainPage(),
+            return BlocBuilder<LocaleBloc, LocaleState>(
+              builder: (context, localeState) {
+                return MaterialApp(
+                  localizationsDelegates: [
+                    S.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                  ],
+                  supportedLocales: S.delegate.supportedLocales,
+                  locale: localeState.appLocale,
+                  title: 'Fake http Shop',
+                  debugShowCheckedModeBanner: false,
+                  theme: theme,
+                  darkTheme: kDarkTheme,
+                  themeMode: ThemeMode.system,
+                  home: const MainPage(),
+                );
+              },
             );
           },
         ),
@@ -59,14 +68,17 @@ class MyApp extends StatelessWidget {
   }
 }
 
-//TODO change language with bloc
-//TODO change theme with bloc
+//TODO product Page
 //TODO desktop layout
+//TODO rive loading animation
+//TODO app icon
+//TODO profile page
+//TODO search product
 
 //* app features:
 //* uses bloc 8
 //* rest api
-//* desktop and mobile layouts
-//* localization (eng, ru)
-//* dark and light themes
+//* localization (realtime switcher)
+//* dark and light themes (realtime switcher)
+//* custom icons
 //* null-safety

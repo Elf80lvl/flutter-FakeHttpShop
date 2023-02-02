@@ -7,5 +7,6 @@
     "total": "Total",
     "checkout": "Check Out",
     "done": "Done! Thank you for using our fake shop",
-    "added_to_cart": "added to cart"
+    "added_to_cart": "added to cart",
+    "language": "Language"
 }

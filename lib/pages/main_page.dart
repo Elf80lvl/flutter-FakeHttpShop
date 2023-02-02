@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc8_http_products/pages/home_page.dart';
+import 'package:flutter_bloc8_http_products/const.dart';
+import 'package:flutter_bloc8_http_products/pages/home_page/home_page.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../bloc/navigation/navigation_bloc.dart';
 import '../bloc/themes/theme_bloc.dart';
 import '../generated/l10n.dart';
+import '../widgets/my_bottom_navigation_bar.dart';
 import 'cart_page/cart_page.dart';
-import 'profile_page.dart';
+import 'profile_page/profile_page.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Fake HTTP Shop'),
@@ -55,41 +60,9 @@ class MainPage extends StatelessWidget {
           return const HomePage();
         },
       ),
-      bottomNavigationBar: BlocBuilder<NavigationBloc, NavigationState>(
-        builder: (context, state) {
-          final navBloc = BlocProvider.of<NavigationBloc>(context);
-          return NavigationBar(
-            selectedIndex: state.index,
-            onDestinationSelected: (index) {
-              if (index == 0) {
-                navBloc.add(const NavigationHomeEvent());
-              }
-
-              if (index == 1) {
-                navBloc.add(const NavigationCartEvent());
-              }
-
-              if (index == 2) {
-                navBloc.add(const NavigationProfileEvent());
-              }
-            },
-            destinations: [
-              NavigationDestination(
-                icon: const Icon(Icons.home),
-                label: S.of(context).home,
-              ),
-              NavigationDestination(
-                icon: const Icon(Icons.shopping_bag),
-                label: S.of(context).cart,
-              ),
-              NavigationDestination(
-                icon: const Icon(Icons.person),
-                label: S.of(context).profile,
-              ),
-            ],
-          );
-        },
-      ),
+      bottomNavigationBar: screenWidth <= kMobileBreakpoint
+          ? const MyBottomNavigationBar()
+          : null,
     );
   }
 }

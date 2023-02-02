@@ -19,6 +19,7 @@ final kLightTheme = ThemeData(
   ),
   navigationBarTheme: NavigationBarThemeData(
     backgroundColor: kScaffoldLightColor,
+    indicatorColor: kAddToCartButtonColor.withOpacity(0.5),
     labelTextStyle: MaterialStateProperty.all(
       const TextStyle(
         fontSize: 14,
@@ -46,6 +47,7 @@ final kDarkTheme = ThemeData(
   ),
   navigationBarTheme: NavigationBarThemeData(
     backgroundColor: kScaffoldDarkColor,
+    indicatorColor: kAddToCartButtonColor.withOpacity(0.5),
     labelTextStyle: MaterialStateProperty.all(
       const TextStyle(
         fontSize: 14,

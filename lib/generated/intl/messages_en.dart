@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "done": MessageLookupByLibrary.simpleMessage(
             "Done! Thank you for using our fake shop"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "total": MessageLookupByLibrary.simpleMessage("Total")
       };

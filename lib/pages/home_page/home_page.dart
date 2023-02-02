@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/products/bloc/product_bloc.dart';
-import '../const.dart';
-import '../repositories/products_repository.dart';
-import '../widgets/product_card.dart';
+import '../../bloc/products/bloc/product_bloc.dart';
+import '../../const.dart';
+import '../../repositories/products_repository.dart';
+import '../../widgets/product_card.dart';
+import 'mobile_home_layout.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return BlocProvider(
       create: (context) =>
           ProductBloc(RepositoryProvider.of<ProductsPepository>(context))
@@ -33,8 +36,16 @@ class HomePage extends StatelessWidget {
 
                   if (state is ProductLoadedState) {
                     final products = state.products;
-                    return ListView.builder(
+
+                    return GridView.builder(
                         itemCount: products.length,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount:
+                              screenWidth <= kMobileBreakpoint ? 1 : 2,
+                          crossAxisSpacing: 5.0,
+                          mainAxisSpacing: 5.0,
+                          //childAspectRatio: 2.0,
+                        ),
                         itemBuilder: (context, index) {
                           return ProductCard(
                             title: products[index].title,
