@@ -1,5 +1,7 @@
 # Flutter Fake HTTP Internet Shop
 
+video: https://youtube.com/shorts/4dhpEzIswxY?feature=share
+
 ## app features:
 * uses bloc 8
 * rest api (http, async)
