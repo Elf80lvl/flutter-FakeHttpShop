@@ -8,5 +8,8 @@
     "checkout": "Check Out",
     "done": "Done! Thank you for using our fake shop",
     "added_to_cart": "added to cart",
-    "language": "Language"
+    "language": "Language",
+    "dark_theme": "Dark theme",
+    "on": "On",
+    "off": "Off"
 }

@@ -68,9 +68,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-//TODO rive loading animation
-//TODO app icon
-//TODO search product
 
 //* app features:
 //* uses bloc 8

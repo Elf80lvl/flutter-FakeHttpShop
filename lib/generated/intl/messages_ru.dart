@@ -28,10 +28,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "cart": MessageLookupByLibrary.simpleMessage("Корзина"),
         "cart_is_empty": MessageLookupByLibrary.simpleMessage("Корзина пуста"),
         "checkout": MessageLookupByLibrary.simpleMessage("Купить"),
+        "dark_theme": MessageLookupByLibrary.simpleMessage("Темная тема"),
         "done": MessageLookupByLibrary.simpleMessage(
             "Готово! Спасибо что воспользовались приложением"),
         "home": MessageLookupByLibrary.simpleMessage("Каталог"),
         "language": MessageLookupByLibrary.simpleMessage("Язык"),
+        "off": MessageLookupByLibrary.simpleMessage("Выкл"),
+        "on": MessageLookupByLibrary.simpleMessage("Вкл"),
         "profile": MessageLookupByLibrary.simpleMessage("Профиль"),
         "total": MessageLookupByLibrary.simpleMessage("Всего")
       };

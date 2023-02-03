@@ -27,10 +27,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "cart": MessageLookupByLibrary.simpleMessage("Cart"),
         "cart_is_empty": MessageLookupByLibrary.simpleMessage("Cart is empty"),
         "checkout": MessageLookupByLibrary.simpleMessage("Check Out"),
+        "dark_theme": MessageLookupByLibrary.simpleMessage("Dark theme"),
         "done": MessageLookupByLibrary.simpleMessage(
             "Done! Thank you for using our fake shop"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "off": MessageLookupByLibrary.simpleMessage("Off"),
+        "on": MessageLookupByLibrary.simpleMessage("On"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "total": MessageLookupByLibrary.simpleMessage("Total")
       };
