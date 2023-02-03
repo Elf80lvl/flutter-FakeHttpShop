@@ -2,10 +2,11 @@
 
 ## app features:
 * uses bloc 8
-* rest api
-* desktop and mobile layouts
-* localization (eng, ru)
-* dark and light themes
+* rest api (http, async)
+* localization (+ switcher)
+* dark and light themes (+ switcher)
+* mobile and desktop layouts
+* custom icons
 * null-safety
 
-![Frame 1](https://user-images.githubusercontent.com/49438937/215788427-a2305ed0-2c3a-4e82-b7f5-6473bd1da066.png)
+![fakeHttpMobile](https://user-images.githubusercontent.com/49438937/216580773-bd9e9d59-8b40-49bc-ba43-32c295542f06.png)
