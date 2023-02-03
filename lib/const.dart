@@ -12,6 +12,7 @@ const kInStockContainerColor = Color.fromARGB(255, 234, 223, 237);
 const kInStockTextColor = Color.fromARGB(255, 152, 116, 162);
 const kAddToCartButtonColor = Color.fromARGB(255, 133, 115, 212);
 const kAddToCartTextColor = Colors.white;
+const kCartCountBGColor = Colors.red;
 
 //*Scaffold color
 const kScaffoldLightColor = Color.fromARGB(255, 247, 248, 250);

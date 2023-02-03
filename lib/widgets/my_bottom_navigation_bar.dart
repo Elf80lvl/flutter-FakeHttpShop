@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc8_http_products/const.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../bloc/cart/cart_bloc.dart';
 import '../bloc/navigation/navigation_bloc.dart';
+import '../bloc/products/bloc/product_bloc.dart';
 import '../bloc/themes/theme_bloc.dart';
 import '../generated/l10n.dart';
 
@@ -47,9 +50,36 @@ class MyBottomNavigationBar extends StatelessWidget {
             BlocBuilder<ThemeBloc, ThemeState>(
               builder: (context, state) {
                 return NavigationDestination(
-                  icon: state.theme == 'light'
-                      ? SvgPicture.asset('assets/icons/Bag_fill.svg')
-                      : SvgPicture.asset('assets/icons/Bag_fill_white.svg'),
+                  // icon: state.theme == 'light'
+                  //     ? SvgPicture.asset('assets/icons/Bag_fill.svg')
+                  //     : SvgPicture.asset('assets/icons/Bag_fill_white.svg'),
+                  icon: Stack(
+                    children: [
+                      state.theme == 'light'
+                          ? SvgPicture.asset('assets/icons/Bag_fill.svg')
+                          : SvgPicture.asset('assets/icons/Bag_fill_white.svg'),
+                      BlocBuilder<CartBloc, CartState>(
+                        builder: (context, cartState) {
+                          return Positioned(
+                            top: 0,
+                            right: 0,
+                            child: cartState.cart.isEmpty
+                                ? const SizedBox()
+                                : Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 6, vertical: 1),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(100),
+                                      color: kCartCountBGColor,
+                                    ),
+                                    child:
+                                        Text(cartState.cart.length.toString()),
+                                  ),
+                          );
+                        },
+                      )
+                    ],
+                  ),
                   label: S.of(context).cart,
                 );
               },
