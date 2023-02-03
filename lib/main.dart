@@ -68,17 +68,15 @@ class MyApp extends StatelessWidget {
   }
 }
 
-//TODO product Page
-//TODO desktop layout
 //TODO rive loading animation
 //TODO app icon
-//TODO profile page
 //TODO search product
 
 //* app features:
 //* uses bloc 8
-//* rest api
-//* localization (realtime switcher)
-//* dark and light themes (realtime switcher)
+//* rest api (http, async)
+//* localization (+ switcher)
+//* dark and light themes (+ switcher)
+//* mobile and desktop layouts
 //* custom icons
 //* null-safety

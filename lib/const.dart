@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const kMobileBreakpoint = 900;
+const kDesktopMaxWidth = 1200.0;
 
 //*border radius
 const kProductCardBorderRadius = 12.0;
