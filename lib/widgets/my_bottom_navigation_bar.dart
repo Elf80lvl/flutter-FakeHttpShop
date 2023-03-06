@@ -72,8 +72,11 @@ class MyBottomNavigationBar extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(100),
                                       color: kCartCountBGColor,
                                     ),
-                                    child:
-                                        Text(cartState.cart.length.toString()),
+                                    child: Text(
+                                      cartState.cart.length.toString(),
+                                      style:
+                                          const TextStyle(color: Colors.white),
+                                    ),
                                   ),
                           );
                         },

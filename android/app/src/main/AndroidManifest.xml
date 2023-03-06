@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flutter_bloc8_http_products">
    <application
-        android:label="flutter_bloc8_http_products"
+        android:label="Fake HTTP shop"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
