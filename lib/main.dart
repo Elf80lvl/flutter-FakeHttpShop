@@ -40,7 +40,9 @@ class MyApp extends StatelessWidget {
         child: BlocBuilder<ThemeBloc, ThemeState>(
           builder: (context, state) {
             final ThemeData theme;
-            state.theme == 'dark' ? theme = kDarkTheme : theme = kLightTheme;
+            state.theme == 'dark'
+                ? theme = kDarkMaterial3Theme
+                : theme = kLightMaterial3Theme;
             return BlocBuilder<LocaleBloc, LocaleState>(
               builder: (context, localeState) {
                 return MaterialApp(
@@ -55,8 +57,8 @@ class MyApp extends StatelessWidget {
                   title: 'Fake http Shop',
                   debugShowCheckedModeBanner: false,
                   theme: theme,
-                  darkTheme: kDarkTheme,
-                  themeMode: ThemeMode.system,
+                  darkTheme: kDarkMaterial3Theme,
+                  themeMode: ThemeMode.light,
                   home: const MainPage(),
                 );
               },

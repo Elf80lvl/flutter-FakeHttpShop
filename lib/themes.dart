@@ -56,3 +56,13 @@ final kDarkTheme = ThemeData(
     ),
   ),
 );
+
+final kDarkMaterial3Theme = ThemeData(
+  useMaterial3: true, brightness: Brightness.dark,
+  //colorSchemeSeed: Colors.green,
+);
+
+final kLightMaterial3Theme = ThemeData(
+  useMaterial3: true,
+  //colorSchemeSeed: Colors.green,
+);

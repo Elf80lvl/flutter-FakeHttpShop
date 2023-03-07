@@ -74,10 +74,16 @@ class HomePage extends StatelessWidget {
                             });
                       }
 
-                      return Container(
-                        height: 100,
-                        width: 100,
-                        color: Colors.red,
+                      return GestureDetector(
+                        onTap: () {
+                          BlocProvider.of<ProductBloc>(context)
+                              .add(ProductGetProductsEvent());
+                        },
+                        child: Container(
+                          height: 100,
+                          width: 100,
+                          color: Colors.red,
+                        ),
                       );
                     },
                   ),
