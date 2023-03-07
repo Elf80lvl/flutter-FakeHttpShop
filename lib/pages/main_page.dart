@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc8_http_products/const.dart';
 import 'package:flutter_bloc8_http_products/pages/home_page/home_page.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../bloc/navigation/navigation_bloc.dart';
 import '../bloc/themes/theme_bloc.dart';
-import '../generated/l10n.dart';
+
 import '../widgets/my_bottom_navigation_bar.dart';
 import 'cart_page/cart_page.dart';
 import 'profile_page/profile_page.dart';
@@ -36,7 +35,7 @@ class MainPage extends StatelessWidget {
                 return IconButton(
                     onPressed: () {
                       themeBloc.add(ThemeToDark());
-                      print(state.theme);
+                      //print(state.theme);
                     },
                     icon: const Icon(Icons.dark_mode));
               }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc8_http_products/pages/home_page/home_page.dart';
+
 import 'package:flutter_bloc8_http_products/pages/main_page.dart';
 import 'package:flutter_bloc8_http_products/themes.dart';
 import 'bloc/cart/cart_bloc.dart';
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
             return BlocBuilder<LocaleBloc, LocaleState>(
               builder: (context, localeState) {
                 return MaterialApp(
-                  localizationsDelegates: [
+                  localizationsDelegates: const [
                     S.delegate,
                     GlobalMaterialLocalizations.delegate,
                     GlobalWidgetsLocalizations.delegate,

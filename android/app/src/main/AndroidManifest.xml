@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flutter_bloc8_http_products">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="Fake HTTP shop"
         android:name="${applicationName}"

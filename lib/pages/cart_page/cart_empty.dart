@@ -15,7 +15,7 @@ class CartEmpty extends StatelessWidget {
         children: [
           Text(
             S.of(context).cart_is_empty,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
             ),
           ),
@@ -27,7 +27,7 @@ class CartEmpty extends StatelessWidget {
                   onTap: () {
                     bloc.add(const NavigationHomeEvent());
                   },
-                  child: Text(
+                  child: const Text(
                     'Go Shopping',
                     style: TextStyle(
                       color: Colors.blue,

@@ -30,7 +30,7 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    //final screenWidth = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Card(
@@ -50,7 +50,7 @@ class ProductCard extends StatelessWidget {
                     borderRadius:
                         BorderRadius.circular(kProductCardBorderRadius),
                     child: ConstrainedBox(
-                      constraints: BoxConstraints(maxHeight: 400),
+                      constraints: const BoxConstraints(maxHeight: 400),
                       child: Image.network(
                         thumbnail,
                         // height: 200,

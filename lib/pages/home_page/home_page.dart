@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../bloc/products/bloc/product_bloc.dart';
 import '../../const.dart';
-import '../../generated/l10n.dart';
+
 import '../../repositories/products_repository.dart';
 import '../../widgets/desktop_top_menu.dart';
 import '../../widgets/product_card.dart';
-import 'mobile_home_layout.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

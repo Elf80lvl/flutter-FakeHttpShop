@@ -5,7 +5,7 @@ import 'package:flutter_bloc8_http_products/pages/cart_page/cart_empty.dart';
 import 'package:flutter_bloc8_http_products/widgets/desktop_top_menu.dart';
 
 import '../../bloc/cart/cart_bloc.dart';
-import '../../bloc/navigation/navigation_bloc.dart';
+
 import '../../generated/l10n.dart';
 
 class CartPage extends StatelessWidget {
@@ -92,18 +92,23 @@ class CartPage extends StatelessWidget {
                       child: SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                            onPressed: () {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                      behavior: SnackBarBehavior.floating,
-                                      content: Text(S.of(context).done)));
-                              bloc.add(ClearCartEvent());
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: kAddToCartButtonColor,
-                              shape: const StadiumBorder(),
+                          onPressed: () {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                behavior: SnackBarBehavior.floating,
+                                content: Text(S.of(context).done)));
+                            bloc.add(ClearCartEvent());
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: kAddToCartButtonColor,
+                            shape: const StadiumBorder(),
+                          ),
+                          child: Text(
+                            S.of(context).checkout,
+                            style: const TextStyle(
+                              color: Colors.white,
                             ),
-                            child: Text(S.of(context).checkout)),
+                          ),
+                        ),
                       ),
                     ),
                   ],

@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../bloc/cart/cart_bloc.dart';
 import '../bloc/navigation/navigation_bloc.dart';
-import '../bloc/products/bloc/product_bloc.dart';
+
 import '../bloc/themes/theme_bloc.dart';
 import '../generated/l10n.dart';
 
